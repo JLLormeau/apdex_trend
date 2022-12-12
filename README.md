@@ -1,7 +1,7 @@
 # APDEX trend
 Designed by Dynatrace France Services JLL  
 Latest update : 2022/12/12
-
+Without plugin powerups 😊
 
 ## Apdex - last 30 days
 Display the all your application in only one dashboard :
