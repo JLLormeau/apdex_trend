@@ -6,9 +6,9 @@
     "clusterVersion": "1.256.101.20221206-132212"
   },
   "dashboardMetadata": {
-    "name": "Apdex_last30days.json",
+    "name": "Apdex - last 30 days.json",
     "shared": true,
-    "owner": "jean.louis.lormeau@dynatrace.com",
+    "owner": "admin",
     "dashboardFilter": {
       "managementZone": {
         "id": "all",
