@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      6
+    ],
+    "clusterVersion": "1.256.101.20221206-132212"
+  },
+  "id": "7c0a88f3-11d3-4eeb-9659-f39f6da70c69",
+  "dashboardMetadata": {
+    "name": "Apdex - last 3 months",
+    "shared": true,
+    "owner": "jean.louis.lormeau@dynatrace.com",
+    "dashboardFilter": {
+      "managementZone": {
+        "id": "all",
+        "name": "All"
+      }
+    },
+    "preset": true,
+    "popularity": 3,
+    "hasConsistentColors": false
+  },
+  "tiles": [
+    {
+      "name": "Apdex",
+      "nameSize": "small",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 4028,
+        "height": 1786
+      },
+      "tileFilter": {
+        "timeframe": "previous 3 months"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.application"
+          ],
+          "metricSelector": "builtin:apps.web.apdex.userType.geoBig:filter(and(or(in(\"dt.entity.application\",entitySelector(\"type(application),not(entityName.equals(~\"My web application~\"))\"))))):splitBy(\"dt.entity.application\"):sort(value(count,descending)):limit(100)",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "HEATMAP",
+        "global": {
+          "hideLegend": true
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "DIMENSIONS",
+          "xAxisBuckets": 91,
+          "showLabels": true
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0.9,
+                "color": "#7dc540"
+              },
+              {
+                "value": 0.5,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 0,
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": "6h"
+      },
+      "metricExpressions": [
+        "resolution=6h&(builtin:apps.web.apdex.userType.geoBig:filter(and(or(in(\"dt.entity.application\",entitySelector(\"type(application),not(entityName.equals(~\"My web application~\"))\"))))):splitBy(\"dt.entity.application\"):sort(value(count,descending)):limit(100)):limit(100):names"
+      ]
+    }
+  ]
+}
