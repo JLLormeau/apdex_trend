@@ -5,7 +5,6 @@
     ],
     "clusterVersion": "1.256.101.20221206-132212"
   },
-  "id": "3235929f-c061-4516-b09a-c8f5c04dbb99",
   "dashboardMetadata": {
     "name": "Apdex - last 30 days",
     "shared": true,
