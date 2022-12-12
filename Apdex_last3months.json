@@ -9,7 +9,7 @@
   "dashboardMetadata": {
     "name": "Apdex - last 3 months",
     "shared": true,
-    "owner": "jean.louis.lormeau@dynatrace.com",
+    "owner": "admin",
     "dashboardFilter": {
       "managementZone": {
         "id": "all",
